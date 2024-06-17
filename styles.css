@@ -1,0 +1,417 @@
+/* Keyframes for image animation */
+@keyframes imageAnimation {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat font for the entire document */
+    scroll-behavior: smooth;
+    background-color: #0e0d0d; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+.container {
+    position: relative;
+    width: 100%; /* Ensure container takes full width of the viewport */
+    height: 100vh; /* Ensure container takes full height of the viewport */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.logo {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 3; /* Ensure logo appears above other content */
+    display: flex;
+    align-items: center; /* Center logo vertically */
+}
+
+.logo img {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+    text-align: center;
+    margin-left: 10px; /* Add margin to separate logo from text */
+}
+
+.logo-text h1 {
+    font-size: 1.5em; /* Adjust font size as needed */
+    margin: 5px 0; /* Adjust margins as needed */
+}
+
+.logo-text .ville {
+    /* Apply gradient blue color */
+    background-image: linear-gradient(to right, #007bff, #00bfff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide the original text color */
+}
+
+.logo-text p {
+    font-size: 1em; /* Adjust font size as needed */
+    margin: 0; /* Remove default margins */
+}
+
+.parallax {
+    position: relative;
+    height: 100vh; /* Full height of viewport */
+    background-attachment: fixed;
+    background-size: cover; /* Adjusted to cover the container */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent background repetition */
+}
+.parallax2 video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: 3;
+}
+
+.parallax1 {
+    background-image: url('C:/Users/Dell/Desktop/testApp/pexels-fauxels-3184405.jpg');
+    top: 0;
+    z-index: 1;
+}
+
+.parallax2 {
+    top: 0;
+    position: relative;
+    overflow: hidden; /* Ensure video does not overflow its container */
+}
+
+.parallax3 {
+    background-image: url('C:/Users/Dell/Desktop/testApp/pexels-luis-gomes-546819.jpg');
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content appears above the dark overlay */
+    height: 100vh; /* Full height of viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    max-width: 600px;
+}
+
+.slide-in-left, .slide-in-right {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-in-left.visible, .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.buttons-container {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+}
+
+/* Common styles for gradient buttons */
+.gradient-button {
+    position: relative;
+    display: inline-block;
+    padding: 8px 16px; /* Adjust padding for smaller buttons */
+    margin: 5px; /* Adjust margin as needed */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; /* Adjust font size as needed */
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: transparent; /* Transparent background */
+    border: 2px solid transparent; /* Transparent border */
+    border-radius: 20px; /* Rounded button */
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s, background 0.4s; /* Smooth transition */
+}
+
+.gradient-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #007bff, #00bfff); /* Gradient blue background color */
+    transition: opacity 0.4s; /* Smooth transition */
+    z-index: -1;
+    border-radius: 20px; /* Rounded button */
+    opacity: 0; /* Initially hidden */
+}
+
+.gradient-button:hover::before {
+    opacity: 1; /* Show overlay on hover */
+    border: 2px solid transparent; /* Transparent border */
+}
+
+.gradient-button:hover {
+    color: #007bff; /* Change text color on hover */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background on hover */
+}
+
+/* Style for the login button */
+.login-button {
+    background: transparent; /* Transparent background */
+    border: 2px solid transparent; /* Transparent border */
+    color: #fff; /* Text color */
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #007bff, #00bfff); /* Gradient blue background color */
+    transition: opacity 0.4s; /* Smooth transition */
+    z-index: -1;
+    border-radius: 20px; /* Rounded button */
+    opacity: 0; /* Initially hidden */
+}
+
+.login-button:hover::before {
+    opacity: 1; /* Show overlay on hover */
+    border: 2px solid transparent; /* Transparent border */
+}
+
+.login-button:hover {
+    color: #007bff; /* Change text color on hover */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background on hover */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ville-text {
+    font-family: 'Montserrat', sans-serif; /* Use the same font as InternVille */
+    font-size: 5em; /* Adjust font size as needed */
+    margin: 170px 0 0; /* Remove default margins */
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideIn 2s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        transform: translateX(0); /* Move to the original position */
+        opacity: 1; /* End with opacity 1 */
+    }
+}
+
+.blue-text {
+    background-image: linear-gradient(to right, #007bff, #00bfff); /* Apply gradient blue color */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide the original text color */
+}
+
+.video-container {
+    text-align: center; /* Align the video to the center */
+    margin-top: 20px; /* Add margin-top to separate from the text */
+}
+
+video {
+    max-width: 100%; /* Ensure video stays within container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px; /* Set maximum height for the video */
+}
+
+#why-internville {
+    position: relative;
+    top: -50px; /* Adjust the value to move the section higher */
+}
+
+#why-internville h1 {
+    font-family: 'Montserrat', sans-serif; /* Use the same font as InternVille */
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+#why-internville h1 .blue-text {
+    /* Apply gradient blue color */
+    background-image: linear-gradient(to right, #007bff, #00bfff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hide the original text color */
+}
+
+.comic-sans {
+    font-family: "Comic Sans MS", cursive;
+}
+
+/* Customer Reviews Section */
+#customer-reviews {
+    background: linear-gradient(to right, #0e0d0d, #0e0d0d); /* Gradient background */
+    color: #fff; /* Light text color */
+    padding: 15px; /* Reduce padding for spacing */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 600px; /* Limit maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+#customer-reviews h1 {
+    text-align: center;
+    font-size: 3em; /* Reduce font size */
+    margin-bottom: 15px; /* Reduce margin for spacing */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+.review {
+    margin-bottom: 10px; /* Reduce margin between reviews */
+    padding: 8px; /* Reduce padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2); /* Soft shadow */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.review:hover {
+    transform: translateY(-3px); /* Lift up on hover */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.review-img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    border-radius: 50%; /* Make image circular */
+    margin-right: 8px; /* Space between image and text */
+    filter: grayscale(100%); /* Convert image to grayscale */
+    transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.review:hover .review-img {
+    filter: grayscale(0%); /* Restore color on hover */
+}
+
+.review-text {
+    font-size: 0.8em; /* Reduce font size */
+    color: #fff;
+}
+
+.review-author {
+    text-align: right;
+    font-size: 0.6em; /* Reduce font size */
+    color: #c0afaf;
+}
+.gradient-hover {
+    background-image: linear-gradient(to right, #007bff, #00bfff); /* Apply gradient blue color */
+    transition: background-image 0.3s ease; /* Add transition for smooth effect */
+}
+.our-partners {
+    margin-top: -300px; /* Adjust the negative top margin as needed */
+}
+.previous-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px; /* Adjusted font size */
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 1;
+    transition: color 0.4s, background 0.4s; /* Smooth transition for color and background */
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.previous-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.previous-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.next-button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjusted to the right side */
+    transform: translateY(-50%);
+    background: linear-gradient(to right, #0040ff, #00ccff); /* Gradient blue background */
+    border: none;
+    font-size: 24px;
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    z-index: 1;
+    transition: background 0.4s, color 0.4s; /* Smooth transition */
+}
+
+.next-button:hover {
+    color: #000; /* Change text color on hover */
+    background: linear-gradient(to right, #0040ff, #00ccff); /* Gradient blue background on hover */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+
+
+.partner-logo {
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Make the logo circular */
+}
